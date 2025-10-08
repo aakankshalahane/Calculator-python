@@ -1,0 +1,97 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNsf66f8m8ANUgS283ErYcu",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/aakankshalahane/Calculator-python/blob/main/Sales%20Data%20Analysis(Pandas)\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "iZeGnuIrZiN8"
+      },
+      "outputs": [],
+      "source": [
+        "# Sales data Analysis\n",
+        "#1 Sample data , convert date to time, total per product,Monthly revenue"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "#sample dataset\n",
+        "data={\n",
+        "    'Date': ['2025-01-10','2025-01-15','2025-02-10','2025-02-20'],\n",
+        "    'Product': ['A','B','A','C'],\n",
+        "    'Revenue': [500, 700, 600, 800]\n",
+        "}\n",
+        "\n",
+        "#DAtatype\n",
+        "df= pd.DataFrame(data)\n",
+        "\n",
+        "#Convert Date to time\n",
+        "df['Date'] = pd.to_datetime(df['Date'])\n",
+        "\n",
+        "#Total revenue per product\n",
+        "total_revenue = df.groupby('Product')['Revenue'].sum()\n",
+        "print(\"Total Revenue per Product:\\n\", total_revenue)\n",
+        "\n",
+        "#Monthly Revenue\n",
+        "df['Month'] = df['Date'].dt.month\n",
+        "monthly_revenue = df.groupby('Month')['Revenue'].sum()\n",
+        "print(\"\\nMonthly Revenue:\\n\", monthly_revenue)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5pJFeU_JZ9gQ",
+        "outputId": "ec8f8d3c-6ac5-4e28-fc67-724ec9b07775"
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Total Revenue per Product:\n",
+            " Product\n",
+            "A    1100\n",
+            "B     700\n",
+            "C     800\n",
+            "Name: Revenue, dtype: int64\n",
+            "\n",
+            "Monthly Revenue:\n",
+            " Month\n",
+            "1    1200\n",
+            "2    1400\n",
+            "Name: Revenue, dtype: int64\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
