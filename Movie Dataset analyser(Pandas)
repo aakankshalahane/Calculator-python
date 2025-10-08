@@ -1,0 +1,87 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOaMW7CrElcfomjKqPI9+oG",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/aakankshalahane/Calculator-python/blob/main/Movie%20Dataset%20analyser(Pandas)\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "QWfp0lxtbVBT",
+        "outputId": "718e48d6-4d84-4d4b-a7e0-49493becba9f"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Highest Rated Movie: M1\n",
+            "\n",
+            "Average Rating per Genre:\n",
+            " Genre\n",
+            "Action     8.5\n",
+            "Comedy     6.9\n",
+            "Drama      7.5\n",
+            "Romance    8.6\n",
+            "Name: Rating, dtype: float64\n",
+            "\n",
+            "Movies Released in 2020:\n",
+            " Empty DataFrame\n",
+            "Columns: [Title, Genre, Year, Rating]\n",
+            "Index: []\n"
+          ]
+        }
+      ],
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "# Sample movie dataset\n",
+        "data = {\n",
+        "    'Title': ['M1', 'M2', 'M3', 'M4'],\n",
+        "    'Genre': ['Romance', 'Drama', 'Action', 'Comedy'],\n",
+        "    'Year': [2022, 2023, 2024, 2025],\n",
+        "    'Rating': [8.6, 7.5, 8.5, 6.9]\n",
+        "}\n",
+        "df = pd.DataFrame(data)\n",
+        "\n",
+        "# Highest rated movie\n",
+        "top_movie = df.loc[df['Rating'].idxmax()]['Title']\n",
+        "print(\"Highest Rated Movie:\", top_movie)\n",
+        "\n",
+        "# Average rating per genre\n",
+        "avg_rating_genre = df.groupby('Genre')['Rating'].mean()\n",
+        "print(\"\\nAverage Rating per Genre:\\n\", avg_rating_genre)\n",
+        "\n",
+        "# Movies released in 2020\n",
+        "movies_2020 = df[df['Year'] == 2020]\n",
+        "print(\"\\nMovies Released in 2020:\\n\", movies_2020)\n"
+      ]
+    }
+  ]
+}
