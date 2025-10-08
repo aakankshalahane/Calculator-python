@@ -1,0 +1,103 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOz/wf2PZ+ml3dbZhtjkfKl",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/aakankshalahane/Calculator-python/blob/main/Simple%20Numpy%20Project\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "CPeQY2wyyIEK",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "9b24a414-bf9d-4c40-c709-4ace0044f36c"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Array: [10 20 30 40 50 60 70 80]\n",
+            "Mean: 45.0\n",
+            "Median: 45.0\n",
+            "Standard Deviation: 22.9128784747792\n",
+            "Minimum: 10\n",
+            "Maximum: 80\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Simple NumPy Project: Array Statistics Calculator\n",
+        "import numpy as np\n",
+        "\n",
+        "# Input data\n",
+        "numbers = [10, 20, 30, 40, 50, 60, 70, 80]\n",
+        "\n",
+        "# Convert to NumPy array\n",
+        "arr = np.array(numbers)\n",
+        "\n",
+        "# Calculate statistics\n",
+        "mean = np.mean(arr)\n",
+        "median = np.median(arr)\n",
+        "std_dev = np.std(arr)\n",
+        "minimum = np.min(arr)\n",
+        "maximum = np.max(arr)\n",
+        "\n",
+        "# Print results\n",
+        "print(f\"Array: {arr}\")\n",
+        "print(f\"Mean: {mean}\")\n",
+        "print(f\"Median: {median}\")\n",
+        "print(f\"Standard Deviation: {std_dev}\")\n",
+        "print(f\"Minimum: {minimum}\")\n",
+        "print(f\"Maximum: {maximum}\")\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!ls\n"
+      ],
+      "metadata": {
+        "id": "wf-WnEj9yPc6",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "2bc6b301-a1cf-433c-c66e-0df5ce9de3bc"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "sample_data\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
