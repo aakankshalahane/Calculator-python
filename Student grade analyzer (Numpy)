@@ -1,0 +1,81 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNY9DLAx2lccgseFkE5gfp1",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/aakankshalahane/Calculator-python/blob/main/Student%20grade%20analyzer%20(Numpy)\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "P-e4DGtEtOKz",
+        "outputId": "513f26d7-3338-4cc6-ca06-6c6f22c1ebec"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Student Grades:\n",
+            "student1 -> Total: 255, Average: 85.00\n",
+            "student2 -> Total: 254, Average: 84.67\n",
+            "student3 -> Total: 276, Average: 92.00\n",
+            "student4 -> Total: 215, Average: 71.67\n",
+            "\n",
+            "Top Student: student3 with total marks 276\n"
+          ]
+        }
+      ],
+      "source": [
+        "#Student grade analyser\n",
+        "import numpy as np\n",
+        "\n",
+        "#Sample data Row=student ans column = subject\n",
+        "grade=np.array([[85, 92, 78],\n",
+        "                   [88, 76, 90],\n",
+        "                   [95, 89, 92],\n",
+        "                   [70, 80, 65]])\n",
+        "\n",
+        "student=['student1','student2','student3','student4']\n",
+        "\n",
+        "#Calculate total and average\n",
+        "total=grade.sum(axis=1)\n",
+        "average=grade.mean(axis=1)\n",
+        "\n",
+        "#Determine top student\n",
+        "top_index = np.argmax(total)\n",
+        "\n",
+        "print(\"Student Grades:\")\n",
+        "for i, student_name in enumerate(student):\n",
+        "    print(f\"{student_name} -> Total: {total[i]}, Average: {average[i]:.2f}\")\n",
+        "\n",
+        "print(f\"\\nTop Student: {student[top_index]} with total marks {total[top_index]}\")"
+      ]
+    }
+  ]
+}
